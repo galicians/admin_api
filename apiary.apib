@@ -12,26 +12,23 @@ Retrive a list of all the services(products) that Telrock offers to their client
 + Response 200 (application/json)
 
         {
-            "infos": [],
-            "errors":[],
-            "data":
-                [   
-                    {
-                        "id":1,
-                        "name":"Smart Protect"
-                    },
-                    {
-                        "id":2,
-                        "name":"Smart Collect"
-                    },
-                    {
-                        "id":3,
-                        "name":"Smart Activate"
-                    },
-                    {
-                        "id":4,
-                        "name":"Smart Engage"
-                    }
+            "body": [
+                        {
+                            "id":1,
+                            "name":"Smart Protect"
+                        },
+                        {
+                            "id":2,
+                            "name":"Smart Collect"
+                        },
+                        {
+                            "id":3,
+                            "name":"Smart Activate"
+                        },
+                        {
+                            "id":4,
+                            "name":"Smart Engage"
+                        }
                 ]
         }
 
@@ -43,9 +40,7 @@ Retrieve a list with all the brands that a client has.
 + Response 200 (application/json)
         
         {
-            "infos": [],
-            "errors":[],
-            "data":
+            "body":
                 [   
                     {
                         "id":1,
@@ -78,9 +73,7 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
 + Response 200 (application/json)
 
         {
-            "infos": [],
-            "errors":[],
-            "data":
+            "body":
                 [
                         {
                             "id":1,
@@ -90,6 +83,8 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "type":"email",
                             "service":"smart activate",
                             "brand":"virgin travel",
+                            "is_live":"true",
+                            "went_live_time":"1472214400",
                             "body": [
                                 {
                                     "lang_id": "english",
@@ -122,6 +117,8 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "type":"sms",
                             "service":"smart protect",
                             "brand":"Virgin TV",
+                            "is_live":"true",
+                            "went_live_time":"1472214400",
                             "body": [
                                 {
                                     "lang_id": "english",
@@ -154,6 +151,8 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "type":"email",
                             "service":"smart engage",
                             "brand":"virgin money",
+                            "is_live":"true",
+                            "went_live_time":"1472214400",
                             "body": [
                                 {
                                     "lang_id": "english",
@@ -186,6 +185,8 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "type":"email",
                             "service":"smart protect",
                             "brand":"virgin health",
+                            "is_live":"true",
+                            "went_live_time":"1472214400",
                             "body": [
                                 {
                                     "lang_id": "english",
@@ -218,6 +219,8 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "type":"sms",
                             "service":"smart collect",
                             "brand":"virgin money",
+                            "is_live":"true",
+                            "went_live_time":"1472214400",
                             "body": [
                                 {
                                     "lang_id": "english",
@@ -250,6 +253,8 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "type":"email",
                             "service":"smart activate",
                             "brand":"Virgin Money",
+                            "is_live":"true",
+                            "went_live_time":"1472214400",
                             "body": [
                                 {
                                     "lang_id": "english",
@@ -282,6 +287,8 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "type":"sms",
                             "service":"smart engage",
                             "brand":"virgin health",
+                            "is_live":"true",
+                            "went_live_time":"1472214400",
                             "body": [
                                 {
                                     "lang_id": "english",
@@ -314,6 +321,8 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "type":"sms",
                             "service":"smart group",
                             "brand":"virgin tv",
+                            "is_live":"true",
+                            "went_live_time":"1472214400",
                             "body": [
                                 {
                                     "lang_id": "english",
@@ -349,9 +358,7 @@ not just the preview objects that we get at [/templates]
 + Response 200 (application/json)
 
         {
-            "infos": [],
-            "errors":[],
-            "data":
+            "body":
                 {   
                     "id":1,
                     "name":"christmas campaign",
