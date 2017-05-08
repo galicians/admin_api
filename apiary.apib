@@ -31,6 +31,175 @@ Retrive a list of all the services(products) that Telrock offers to their client
                         }
                 ]
         }
+        
+# Components Collection [/components]
+
+### List All Components [GET]
+Retieve list of components that a client can purchase
+
++ Response 200 (application/json)
+
+        {
+            "body": [
+                        {
+                            "id":1,
+                            "name":"Account Alert",
+                            "code":"ACCOUNT_ALERT",
+                            "isActive": true,
+                            "sendingWindows": []
+                        },
+                        {
+                            "id":2,
+                            "name":"Account Authorisation",
+                            "code":"ACCOUNT_AUTHORISATION",
+                            "isActive": false,
+                            "sendingWindows": []
+                        },
+                        {
+                            "id":3,
+                            "name":"Account Servicing",
+                            "code":"ACCOUNT_SERVICING",
+                            "isActive": true,
+                            "sendingWindows": []
+                        },
+                        {
+                            "id":4,
+                            "name":"Batch Campaign",
+                            "code":"Batch Campaign",
+                            "isActive": true,
+                            "sendingWindows": []
+                        },
+                        {
+                            "id":5,
+                            "name":"Batch File",
+                            "code":"BATCH_FILE",
+                            "isActive": false,
+                            "sendingWindows": []
+                        },
+                        {
+                            "id":6,
+                            "name":"Fraud Alert",
+                            "code":"FRAUD_ALERT",
+                            "isActive": false,
+                            "sendingWindows": []
+                        },
+                        {
+                            "id":7,
+                            "name":"One-time Password",
+                            "code":"ONE_TIME_PASSWORD",
+                            "isActive": true,
+                            "sendingWindows": []
+                        },
+                        {
+                            "id":8,
+                            "name":"Wallet Pay",
+                            "code":"WALLET_PAY",
+                            "isActive": false,
+                            "sendingWindows": []
+                        },
+                        {
+                            "id":9,
+                            "name":"Web Message",
+                            "code":"WEB_MESSAGE",
+                            "isActive": false,
+                            "sendingWindows": []
+                        }
+                ]
+        }
+        
+# Components Collection [/components/{id}]
+
+### List All Components [PUT]
+Update body data for selected component
+
++ Response 200 (application/json)
+
+        {
+            "body": 
+                [
+                    {
+                        "id":1,
+                        "name":"Test account",
+                        "code":"TESTING",
+                        "isActive": true,
+                        "sendingWindows": []
+                    }
+                ]
+        }
+        
+        
+# BrandList Collection [/brand-list]
+
+### List All Available Brands [GET]
+Retrieve a list of all the available brands that can be used with a client.
+
++ Response 200 (application/json)
+
+        {
+            "body":
+                [
+                    {
+                        "id":1,
+                        "name": "Virgin Travel"
+                    },
+                    {
+                        "id":2,
+                        "name": "Virgin Money"
+                    },
+                    {
+                        "id":3,
+                        "name": "Virgin TV"
+                    },
+                    {
+                        "id":4,
+                        "name": "Virgin Health"
+                    }
+                ]
+        }
+        
+       
+# CountryList Collection [/country-list] 
+
+### List All Available Countries [GET]
+Retrieve a list of all the available countries that can be used with a client.
+
++ Response 200 (application/json)
+        
+        {
+            "body":
+                [
+                    {
+                        "id": 1,
+                        "name": "English(UK)",
+                        "code": "ENG",
+                        "locale": "en_GB"
+                    },
+                    {
+                        "id": 2,
+                        "name": "French",
+                        "code": "FRA",
+                        "locale": "fr_FR"
+                    },
+                    {
+                        "id": 3,
+                        "name": "German",
+                        "code": "GER",
+                        "locale": "de_DE"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Spanish",
+                        "code": "ESP",
+                        "locale": "es_ES"
+                    },
+                    {
+                        "id": 5,
+                        "name": "English(US)",
+                        "code": "USA",
+                        "locale": "en_US"
+                    }
+                ]
+        }
 
 # Brands Collection [/brands]
 
@@ -46,28 +215,28 @@ Retrieve a list with all the brands that a client has.
                         "id":1,
                         "name":"Virgin Travel",
                         "defaultBrand": true,
-                        "country": "uk",
-                        "alias": ["uk-travel"]
+                        "country": "GBR",
+                        "alias": ["uk-travel", "ukTrav", "travUK"]
                     },
                     {
                         "id":2,
                         "name":"Virgin Travel",
                         "defaultBrand": false,
-                        "country": "fr",
+                        "country": "FRA",
                         "alias": ["fr-travel"]
                     },
                     {
                         "id":3,
                         "name":"Virgin Travel",
                         "defaultBrand": false,
-                        "country": "es",
+                        "country": "ESP",
                         "alias": ["es-travel"]
                     },
                     {
                         "id":4,
                         "name":"Virgin Money",
                         "defaultBrand": false,
-                        "country": "uk",
+                        "country": "GBR",
                         "alias": ["uk-money"]
                     },
                     {
@@ -81,14 +250,35 @@ Retrieve a list with all the brands that a client has.
                         "id":6,
                         "name":"Virgin Health",
                         "defaultBrand": false,
-                        "country": "uk",
+                        "country": "GBR",
                         "alias": ["uk-health"]
                     }
                 ]
         }
+        
+
+        
+### Update selected brand [POST]
+Update the selected brand data with new values. eg set defaultBrand to either true or false.
+
++ Response 200 (application/json)
+        
+        {
+            "body": 
+                [
+                    {
+                        "id": 10,
+                        "name": "Test Name",
+                        "defaultBrand": true,
+                        "country": "testLand",
+                        "alias": ["testAlias"]
+                    }    
+                ]
+        }
+        
    
 
-## Templates Collection [/templates]
+# Templates Collection [/templates]
 
 A logged in user can have multiple templates under their account. 
 This resource is primarily responsible for listing the a preview of all templates and the basic details about them.
@@ -495,7 +685,7 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                         }
                     ]
         }
-## Template [/templates/{template_id}]
+# Template [/templates/{template_id}]
 
 ### List All Templates preview objects [GET]
 Retrieves an specific template identified for the template ID. This will retreive the whole template object,
