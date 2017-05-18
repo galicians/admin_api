@@ -46,68 +46,105 @@ Retieve list of components that a client can purchase
                             "name":"Account Alert",
                             "code":"ACCOUNT_ALERT",
                             "isActive": true,
-                            "sendingWindows": []
+                            "products": ["Smart Engage"],
+                            "sendingWindows": [],
+                            "logo": "SmartEngage-logo.png",
+                            "status": "purchased-active"
                         },
                         {
                             "id":2,
                             "name":"Account Authorisation",
                             "code":"ACCOUNT_AUTHORISATION",
                             "isActive": false,
-                            "sendingWindows": []
+                            "products": ["Smart Engage"],
+                            "sendingWindows": [],
+                            "logo": "SmartEngage-logo.png",
+                            "status": "purchased-inactive"
                         },
                         {
                             "id":3,
                             "name":"Account Servicing",
                             "code":"ACCOUNT_SERVICING",
-                            "isActive": true,
-                            "sendingWindows": []
+                            "isActive": false,
+                            "products": ["Smart Engage"],
+                            "sendingWindows": [],
+                            "logo": "SmartEngage-logo.png",
+                            "status": "not-purchased"
                         },
                         {
                             "id":4,
                             "name":"Batch Campaign",
                             "code":"Batch Campaign",
-                            "isActive": true,
-                            "sendingWindows": []
+                            "isActive": false,
+                            "products": ["Smart Engage"],
+                            "sendingWindows": [],
+                            "logo": "SmartEngage-logo.png",
+                            "status": "not-purchased"
                         },
                         {
                             "id":5,
                             "name":"Batch File",
                             "code":"BATCH_FILE",
                             "isActive": false,
-                            "sendingWindows": []
+                            "products": ["Smart Engage"],
+                            "sendingWindows": [],
+                            "logo": "SmartEngage-logo.png",
+                            "status": "not-purchased"
                         },
                         {
                             "id":6,
                             "name":"Fraud Alert",
                             "code":"FRAUD_ALERT",
                             "isActive": false,
-                            "sendingWindows": []
+                            "products": ["Smart Protect"],
+                            "sendingWindows": [],
+                            "logo": "SmartProtect-logo.png",
+                            "status": "not-purchased"
                         },
                         {
                             "id":7,
                             "name":"One-time Password",
                             "code":"ONE_TIME_PASSWORD",
-                            "isActive": true,
-                            "sendingWindows": []
+                            "isActive": false,
+                            "products": ["Smart Engage"],
+                            "sendingWindows": [],
+                            "logo": "SmartEngage-logo.png",
+                            "status": "not-purchased"
                         },
                         {
                             "id":8,
                             "name":"Wallet Pay",
                             "code":"WALLET_PAY",
                             "isActive": false,
-                            "sendingWindows": []
+                            "products": ["Smart Engage"],
+                            "sendingWindows": [],
+                            "logo": "SmartEngage-logo.png",
+                            "status": "not-purchased"
                         },
                         {
                             "id":9,
                             "name":"Web Message",
                             "code":"WEB_MESSAGE",
                             "isActive": false,
-                            "sendingWindows": []
+                            "products": ["Smart Engage"],
+                            "sendingWindows": [],
+                            "logo": "SmartEngage-logo.png",
+                            "status": "not-purchased"
+                        },
+                        {
+                            "id":10,
+                            "name":"Smart Collect",
+                            "code":"SMART_COLLECT",
+                            "isActive": false,
+                            "products": ["Smart Collect"],
+                            "sendingWindows": [],
+                            "logo": "SmartCollect-logo.png",
+                            "status": "not-purchased"
                         }
                 ]
         }
         
-# Components Collection [/components/{id}]
+# Components Update [/components/{id}]
 
 ### List All Components [PUT]
 Update body data for selected component
@@ -127,7 +164,80 @@ Update body data for selected component
                 ]
         }
         
+# Users Collection [/users]
+
+This resource handles all requests for getting or modifying user account data
+
+### List All User objects [GET]
+Retrieve a list of all User objects stored in DataBase
+
++ Response 200 (application/json)
+
+        {
+            "body":
+                [
+                        {
+                            "id":1,
+                            "userName": "alan_price",
+                            "email": "aprice@acme.com",
+                            "group": "admin",
+                            "lastLogin": "23423428"
+                        },
+                        {
+                            "id":2,
+                            "userName": "barry_tanner",
+                            "email": "btanner@acme.com",
+                            "group": "write",
+                            "lastLogin": "345333"
+                        },
+                        {
+                            "id":3,
+                            "userName": "chris_dowel",
+                            "email": "cdowel@acme.com",
+                            "group": "read",
+                            "lastLogin": "4564564646"
+                        }
+                ]
+        }
         
+        
+# Groups Collection [/groups]
+
+This resource handles all requests for getting or modifying application group data.
+
+### List All Available Groups [GET]
+Retrieve a list of all the available Group types that can be used in the application.
+
++ Response 200 (application/json)
+
+        {
+            "body":
+                [
+                    {
+                        "id":1,
+                        "name": "Administrator",
+                        "code": "admin"
+                    },
+                    {
+                        "id":2,
+                        "name": "Writer",
+                        "code": "write"
+                    },
+                    {
+                        "id":3,
+                        "name": "Reader",
+                        "code": "read"
+                    },
+                    {
+                        "id":4,
+                        "name": "publisher",
+                        "code": "pub"
+                    }
+                ]
+        }
+        
+
+
 # BrandList Collection [/brand-list]
 
 ### List All Available Brands [GET]
@@ -171,7 +281,7 @@ Retrieve a list of all the available countries that can be used with a client.
                     {
                         "id": 1,
                         "name": "English(UK)",
-                        "code": "ENG",
+                        "code": "GBR",
                         "locale": "en_GB"
                     },
                     {
@@ -214,13 +324,15 @@ Retrieve a list with all the brands that a client has.
                     {
                         "id":1,
                         "name":"Virgin Travel",
+                        "codeName":"virgin-travel",
                         "defaultBrand": true,
                         "country": "GBR",
-                        "alias": ["uk-travel", "ukTrav", "travUK"]
+                        "alias": ["uk-travel", "ukTrav", "travUK", "ac-travel", "zxTrav", "nmravUK"]
                     },
                     {
                         "id":2,
                         "name":"Virgin Travel",
+                        "codeName":"virgin-travel",
                         "defaultBrand": false,
                         "country": "FRA",
                         "alias": ["fr-travel"]
@@ -228,6 +340,7 @@ Retrieve a list with all the brands that a client has.
                     {
                         "id":3,
                         "name":"Virgin Travel",
+                        "codeName":"virgin-travel",
                         "defaultBrand": false,
                         "country": "ESP",
                         "alias": ["es-travel"]
@@ -235,6 +348,7 @@ Retrieve a list with all the brands that a client has.
                     {
                         "id":4,
                         "name":"Virgin Money",
+                        "codeName":"virgin-money",
                         "defaultBrand": false,
                         "country": "GBR",
                         "alias": ["uk-money"]
@@ -242,13 +356,15 @@ Retrieve a list with all the brands that a client has.
                     {
                         "id":5,
                         "name":"Virgin TV",
+                        "codeName":"virgin-tv",
                         "defaultBrand": false,
-                        "country": "uk",
+                        "country": "GBR",
                         "alias": ["uk-tv"]
                     },
                     {
                         "id":6,
                         "name":"Virgin Health",
+                        "codeName":"virgin-health",
                         "defaultBrand": false,
                         "country": "GBR",
                         "alias": ["uk-health"]
@@ -304,14 +420,14 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "body": [
                                 {
                                     "lang_id": "english",
-                                    "default":false,
+                                    "default":true,
                                     "last_modified":1472214400,
                                     "is_live":true,
                                     "subject":"english subject",
                                     "body":"So you know our emails are genuine, whenever we include links to our website in emails we will also quote the last four digits of your card number: "
                                 }, {
                                     "lang_id": "german",
-                                    "default":true,
+                                    "default":false,
                                     "last_modified":1472214400,
                                     "is_live":true,
                                     "subject":"german subject",
@@ -353,14 +469,14 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "body": [
                                 {
                                     "lang_id": "english",
-                                    "default":false,
+                                    "default":true,
                                     "last_modified":1412214400,
                                     "is_live":false,
                                     "subject":"",
                                     "body":"So you know our emails are genuine, wheneve "
                                 }, {
                                     "lang_id": "german",
-                                    "default":true,
+                                    "default":false,
                                     "last_modified":1452214400,
                                     "is_live":true,
                                     "subject":"",
@@ -402,7 +518,7 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                             "body": [
                                 {
                                     "lang_id": "english",
-                                    "default":false,
+                                    "default":true,
                                     "last_modified":1472214400,
                                     "is_live":false,
                                     "subject":"english subject",
