@@ -196,6 +196,125 @@ Retrieve a list of all User objects stored in DataBase
                             "email": "cdowel@acme.com",
                             "group": "read",
                             "lastLogin": "4564564646"
+                        },
+                        {
+                            "id":4,
+                            "userName": "dave_franks",
+                            "email": "dfr@acme.com",
+                            "group": "admin",
+                            "lastLogin": "3242342"
+                        },
+                        {
+                            "id":5,
+                            "userName": "eddie_stobart",
+                            "email": "eddies@acme.com",
+                            "group": "read",
+                            "lastLogin": "112312111"
+                        },
+                        {
+                            "id":6,
+                            "userName": "francis_boule",
+                            "email": "fboule@acme.com",
+                            "group": "pub",
+                            "lastLogin": "112312111"
+                        },
+                        {
+                            "id":7,
+                            "userName": "gary_white",
+                            "email": "garywt@acme.com",
+                            "group": "admin",
+                            "lastLogin": "2342424242"
+                        },
+                        {
+                            "id":8,
+                            "userName": "henry_cloy",
+                            "email": "henners@acme.com",
+                            "group": "write",
+                            "lastLogin": "293487978"
+                        },
+                        {
+                            "id":9,
+                            "userName": "ian_ranger",
+                            "email": "iranger@acme.com",
+                            "group": "write",
+                            "lastLogin": "24324234"
+                        },
+                        {
+                            "id":10,
+                            "userName": "julian_waters",
+                            "email": "jw@acme.com",
+                            "group": "write",
+                            "lastLogin": "4536564456"
+                        },
+                        {
+                            "id":11,
+                            "userName": "kevin_hillock",
+                            "email": "khill@acme.com",
+                            "group": "pub",
+                            "lastLogin": "65745656"
+                        },
+                        {
+                            "id":12,
+                            "userName": "luke_skywalker",
+                            "email": "lukejedi@acme.com",
+                            "group": "admin",
+                            "lastLogin": "57645632"
+                        },
+                        {
+                            "id":13,
+                            "userName": "mike_fence",
+                            "email": "mfencey@acme.com",
+                            "group": "read",
+                            "lastLogin": "53465437987"
+                        },
+                        {
+                            "id":14,
+                            "userName": "nigel_porter",
+                            "email": "nigelp@acme.com",
+                            "group": "read",
+                            "lastLogin": "534654374534"
+                        },
+                        {
+                            "id":15,
+                            "userName": "orson_welles",
+                            "email": "ow@acme.com",
+                            "group": "admin",
+                            "lastLogin": "54366543453"
+                        },
+                        {
+                            "id":16,
+                            "userName": "perter_windsor",
+                            "email": "petew@acme.com",
+                            "group": "admin",
+                            "lastLogin": "547657234656"
+                        },
+                        {
+                            "id":17,
+                            "userName": "quincy_jones",
+                            "email": "qcjones@acme.com",
+                            "group": "admin",
+                            "lastLogin": "1243345135"
+                        },
+                        {
+                            "id":18,
+                            "userName": "rob_smithy",
+                            "email": "robbylife@acme.com",
+                            "group": "pub",
+                            "lastLogin": "9867878769"
+                        },
+                        {
+                            "id":19,
+                            "userName": "steve_white",
+                            "email": "snookerpro@acme.com",
+                            "group": "admin",
+                            "lastLogin": "436457452435"
+                        },
+                        {
+                            "id":20,
+                            "userName": "terry_hills",
+                            "email": "thillshaveeyes@acme.com",
+                            "group": "pub",
+                            "lastLogin": "325345233545"
                         }
                 ]
         }
@@ -216,22 +335,766 @@ Retrieve a list of all the available Group types that can be used in the applica
                     {
                         "id":1,
                         "name": "Administrator",
-                        "code": "admin"
+                        "code": "admin",
+                        "components": [
+                            {
+                                "name": "fraud",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": true
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "walletPay",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": true
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "oneTimePassword",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": true
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "webMessage",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": true
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "id":2,
                         "name": "Writer",
-                        "code": "write"
+                        "code": "write",
+                        "components": [
+                            {
+                                "name": "fraud",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "walletPay",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "oneTimePassword",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "webMessage",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "id":3,
                         "name": "Reader",
-                        "code": "read"
+                        "code": "read",
+                        "components": [
+                            {
+                                "name": "fraud",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "walletPay",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "oneTimePassword",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "webMessage",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "id":4,
                         "name": "publisher",
-                        "code": "pub"
+                        "code": "pub",
+                        "components": [
+                            {
+                                "name": "fraud",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "walletPay",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "oneTimePassword",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "webMessage",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
         }
