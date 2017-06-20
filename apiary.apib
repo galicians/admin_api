@@ -6,8 +6,8 @@ HOST: http://private-f2122-adminjson.apiary-mock.com
     
 # Groups Collection [/services]
 
-### List All Services [GET]
-Retrive a list of all the services(products) that Telrock offers to their clients.
+### List All Products [GET]
+Retrive a list of all the Services(products) that Telrock offers to their clients.
 
 + Response 200 (application/json)
 
@@ -34,8 +34,8 @@ Retrive a list of all the services(products) that Telrock offers to their client
         
 # Components Collection [/components]
 
-### List All Components [GET]
-Retieve list of components that a client can purchase
+### List All Services [GET]
+Retieve list of components (services) that a client can purchase
 
 + Response 200 (application/json)
 
@@ -69,7 +69,7 @@ Retieve list of components that a client can purchase
                             "products": ["Smart Engage"],
                             "sendingWindows": [],
                             "logo": "SmartEngage-logo.png",
-                            "status": "not-purchased"
+                            "status": "purchased-inactive"
                         },
                         {
                             "id":4,
@@ -79,7 +79,7 @@ Retieve list of components that a client can purchase
                             "products": ["Smart Engage"],
                             "sendingWindows": [],
                             "logo": "SmartEngage-logo.png",
-                            "status": "not-purchased"
+                            "status": "purchased-inactive"
                         },
                         {
                             "id":5,
@@ -106,9 +106,9 @@ Retieve list of components that a client can purchase
                             "name":"One-time Password",
                             "code":"ONE_TIME_PASSWORD",
                             "isActive": false,
-                            "products": ["Smart Engage"],
+                            "products": ["Smart Activate", "Smart Engage"],
                             "sendingWindows": [],
-                            "logo": "SmartEngage-logo.png",
+                            "logo": "SmartActive-logo.png",
                             "status": "not-purchased"
                         },
                         {
@@ -133,7 +133,7 @@ Retieve list of components that a client can purchase
                         },
                         {
                             "id":10,
-                            "name":"Smart Collect",
+                            "name":"Smart Collect Services",
                             "code":"SMART_COLLECT",
                             "isActive": false,
                             "products": ["Smart Collect"],
@@ -146,7 +146,7 @@ Retieve list of components that a client can purchase
         
 # Components Update [/components/{id}]
 
-### List All Components [PUT]
+### Update Selected Service [PUT]
 Update body data for selected component
 
 + Response 200 (application/json)
@@ -163,7 +163,265 @@ Update body data for selected component
                     }
                 ]
         }
+
+# SenderId Collection [/senderid]        
+### List All SenderId objects [GET]
+Retrive a list of all the senderId objects stored.
+
++ Response 200 (application/json)
+
+        {
+            "body": [
+                        {
+                            "id":1,
+                            "messageType": "email",
+                            "alias": "messageAliasUk",
+                            "countryCode": "GBR",
+                            "brand": "virgin-travel"
+                        },
+                        {
+                            "id":2,
+                            "messageType": "textsms",
+                            "alias": "messageAliasFr",
+                            "countryCode": "FRA",
+                            "brand": "virgin-travel"
+                        },
+                        {
+                            "id":3,
+                            "messageType": "email",
+                            "alias": "messageAliasEsp",
+                            "countryCode": "ESP",
+                            "brand": "virgin-money"
+                        },
+                        {
+                            "id":4,
+                            "messageType": "textsms",
+                            "alias": "messageAliasDe",
+                            "countryCode": "De",
+                            "brand": "virgin-holidays"
+                        },
+                        {
+                            "id":5,
+                            "messageType": "email",
+                            "alias": "messageAliasUk",
+                            "countryCode": "GBR",
+                            "brand": "virgin-travel"
+                        },
+                        {
+                            "id":6,
+                            "messageType": "textsms",
+                            "alias": "messageAliasFr",
+                            "countryCode": "FRA",
+                            "brand": "virgin-travel"
+                        },
+                        {
+                            "id":7,
+                            "messageType": "email",
+                            "alias": "messageAliasEsp",
+                            "countryCode": "ESP",
+                            "brand": "virgin-money"
+                        },
+                        {
+                            "id":8,
+                            "messageType": "textsms",
+                            "alias": "messageAliasDe",
+                            "countryCode": "De",
+                            "brand": "virgin-holidays"
+                        }
+                ]
+        }
         
+# Message Keywords Collection [/message/keywords]
+### List All Keyword objects [GET]
+Retrive a list of all the Keyword objects stored.
+
++ Response 200 (application/json)
+
+        {
+            "body": [
+                {
+                    "id": 1,
+                    "type": "YES_GROUP",
+                    "pattern": "^Y$",
+                    "priority": 1,
+                    "locale": "en_GB",
+                    "description": "All allowed types of text message response accepted for a YES reply"
+                },
+                {
+                    "id": 2,
+                    "type": "MAYBE_GROUP",
+                    "pattern": "^M$",
+                    "priority": 2,
+                    "locale": "fr_FR",
+                    "description": "All allowed types of text message response accepted for a MAYBE reply"
+                },
+                {
+                    "id": 3,
+                    "type": "YES_GROUP",
+                    "pattern": "^Y$",
+                    "priority": 1,
+                    "locale": "en_GB",
+                    "description": "All allowed types of text message response accepted for a YES reply"
+                },
+                {
+                    "id": 4,
+                    "type": "NO_GROUP",
+                    "pattern": "^N$",
+                    "priority": 2,
+                    "locale": "de_DE",
+                    "description": "All allowed types of text message response accepted for a NO reply"
+                },
+                {
+                    "id": 5,
+                    "type": "MAYBE_GROUP",
+                    "pattern": "^M$",
+                    "priority": 2,
+                    "locale": "fr_FR",
+                    "description": "All allowed types of text message response accepted for a MAYBE reply"
+                }
+                
+            ]
+        }
+
+# Message SenderId Collection [/message/sender]
+### List All SenderId objects [GET]
+Retrive a list of all the senderId objects stored.
+
++ Response 200 (application/json)
+
+        {
+            "body": [
+                {
+                    "id": "1123-1313-141-436",
+                    "channel": "SMS",
+                    "value": "My Alias",
+                    "countryCode": "GBR",
+                    "component": "FRAUD_ALERT",
+                    "brand": "My Company"
+                },
+                {
+                    "id": "1123-1313-141-437",
+                    "channel": "EMAIL",
+                    "value": "My Alias",
+                    "countryCode": "GBR",
+                    "component": "FRAUD_ALERT",
+                    "brand": "My Company"
+                },
+                {
+                    "id": "1123-1313-141-438",
+                    "channel": "SMS",
+                    "value": "My Alias",
+                    "countryCode": "GBR",
+                    "component": "FRAUD_ALERT",
+                    "brand": "My Company"
+                },
+                {
+                    "id": "1123-1313-141-439",
+                    "channel": "EMAIL",
+                    "value": "My Alias",
+                    "countryCode": "GBR",
+                    "component": "FRAUD_ALERT",
+                    "brand": "My Company"
+                },
+                {
+                    "id": "1123-1313-141-440",
+                    "channel": "SMS",
+                    "value": "My Alias",
+                    "countryCode": "GBR",
+                    "component": "FRAUD_ALERT",
+                    "brand": "My Company"
+                },
+                {
+                    "id": "1123-1313-141-441",
+                    "channel": "EMAIL",
+                    "value": "My Alias",
+                    "countryCode": "GBR",
+                    "component": "FRAUD_ALERT",
+                    "brand": "My Company"
+                }
+            ]
+        }
+
++ Response 401 (application/json)
+
+        {
+            "body": [
+                {
+                    "description": "The user does not have permission to invoke this resource/method."
+                }
+            ]
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "body": [
+                {
+                    "description": "An internal error occurred, while processing this request."
+                }
+            ]
+        }
+
+### Post a SenderId object [POST]
+Post a SenderId Object to the SenderId Collection.
+
++ Response 200 (application/json)
+
+        {
+            "body": [
+                {
+                    "id": "1111-1111-111-111",
+                    "channel": "EMAIL",
+                    "value": "Extra Alias",
+                    "countryCode": "GBR",
+                    "component": "FRAUD_ALERT",
+                    "brand": "Extra Company"
+                }
+            ]
+        }
+        
++ Response 201 (application/json)
+
+        {
+            "body": [
+                {
+                    "description": "Sender created."
+                }
+            ]
+        }
+        
++ Response 400 (application/json)
+
+        {
+            "body": [
+                {
+                    "description": "The new Sender is invalid."
+                }
+            ]
+        }
+        
++ Response 401 (application/json)
+
+        {
+            "body": [
+                {
+                    "description": "The user does not have permission to invoke this resource/method."
+                }
+            ]
+        }
+        
++ Response 500 (application/json)
+
+        {
+            "body": [
+                {
+                    "description": "An internal error occurred, while processing this request."
+                }
+            ]
+        }
+        
+
+
 # Users Collection [/users]
 
 This resource handles all requests for getting or modifying user account data
@@ -433,6 +691,61 @@ Retrieve a list of all the available Group types that can be used in the applica
                         "code": "admin",
                         "components": [
                             {
+                                "name": "Global",
+                                "code": "global",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    }
+                                ]
+                            },
+                            {
                                 "name": "Fraud",
                                 "code": "fraud",
                                 "isActive": true,
@@ -659,6 +972,61 @@ Retrieve a list of all the available Group types that can be used in the applica
                         "name": "Writer",
                         "code": "write",
                         "components": [
+                            {
+                                "name": "Global",
+                                "code": "global",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    }
+                                ]
+                            },
                             {
                                 "name": "Fraud",
                                 "code": "fraud",
@@ -887,6 +1255,62 @@ Retrieve a list of all the available Group types that can be used in the applica
                         "code": "read",
                         "components": [
                             {
+                                "name": "Global",
+                                "code": "global",
+                                "isActive": true,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                        
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    }
+                                ]
+                            },
+                            {
                                 "name": "Fraud",
                                 "code": "fraud",
                                 "isActive": true,
@@ -1112,7 +1536,63 @@ Retrieve a list of all the available Group types that can be used in the applica
                         "code": "pub",
                         "components": [
                             {
-                                "name": "fraud",
+                                "name": "Global",
+                                "code": "global",
+                                "isActive": false,
+                                "features": [
+                                    {
+                                        "name": "Message Templates",
+                                        "code": "messageTemplates",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Message Delivery",
+                                        "code": "messageDelivery",
+                                        "canEdit": true,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Event Actions",
+                                        "code": "eventActions",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Merge Tags",
+                                        "code": "mergeTags",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Brand Management",
+                                        "code": "brandManagement",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "Reporting",
+                                        "code": "reporting",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "User Rights",
+                                        "code": "userRights",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    },
+                                    {
+                                        "name": "User Groups",
+                                        "code": "userGroups",
+                                        "canEdit": false,
+                                        "lastModified": 1472214400
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Fraud",
+                                "code": "fraud",
                                 "isActive": false,
                                 "features": [
                                     {
@@ -1603,7 +2083,7 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                         },
                         {
                             "id":3,
-                            "name": "new user capture email",
+                            "name": "new user email",
                             "created_time": 1492214400,
                             "last_modified_time":1472214400,
                             "type":"email",
@@ -1750,7 +2230,7 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                         },
                         {
                             "id":6,
-                            "name": "Virgin Money new member",
+                            "name": "Virgin Money member",
                             "created_time": 1492214400,
                             "last_modified_time":1472214400,
                             "type":"email",
@@ -1799,7 +2279,7 @@ Retrieve a list of your templates, Emails & SMS. This will list just a preview o
                         },
                         {
                             "id":7,
-                            "name": "text message welcome",
+                            "name": "text sms welcome",
                             "created_time": 1492214400,
                             "last_modified_time":1472214400,
                             "type":"sms",
